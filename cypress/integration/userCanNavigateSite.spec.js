@@ -12,8 +12,7 @@ describe("Navigation", () => {
   });
 
   it('is expected to render three menu items when menu is clicked', () => {
-    cy.get("[data-cy=menu]").click().within(() => {
-      cy.get("data-cy=menu-items").should("have.length", 3)
-    })
+    cy.get("[data-cy=menu]").click()
+    cy.get("[data-cy=menu-items]").children().should("have.length", 3)
   });
 });
